@@ -2,14 +2,15 @@ body {
   margin: 0;
   padding-top: 20px;
   text-align: center;
-  font-family: Georgia, serif;
-  background-color: #eee3cf;
+  font-family: "Lucida Console", "Courier New", monospace;
+  background: #eedbae;
+  background: radial-gradient(circle,rgba(238, 219, 174, 1) 0%, rgba(234, 170, 136, 1) 48%, rgba(230, 161, 96, 1) 100%);
   color: #4b3825;
 }
 
 h1 {
   font-size: 45px;
-  font-weight: normal;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
@@ -24,7 +25,6 @@ p {
   margin: 30px auto;
   transform: scale(0.6);
   transform-origin: top center;
-  left: -70px;
 }
 
 .suitcase-img {
@@ -73,5 +73,6 @@ p {
 
 .item:hover {
   transform: scale(1.2);
+  rotate: 60deg;
   z-index: 10;
 }
