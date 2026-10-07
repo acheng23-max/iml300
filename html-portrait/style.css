@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  padding-top: 20px;
+  text-align: center;
+  font-family: Georgia, serif;
+  background-color: #eee3cf;
+  color: #4b3825;
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.suitcase {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  margin: 30px auto;
+  transform: scale(0.6);
+  transform-origin: top center;
+  left: -70px;
+}
+
+.suitcase-img {
+  position: absolute;
+  width: 900px;
+  left: 0;
+  top: 0;
+}
+
+.item {
+  position: absolute;
+  transition: 0.3s;
+}
+
+
+.sea {
+  width: 180px;
+  left: 100px;
+  top: 360px;
+}
+
+.dance {
+  width: 115px;
+  left: 310px;
+  top: 270px;
+}
+
+.cat {
+  width: 145px;
+  left: 430px;
+  top: 410px;
+}
+
+.fruit {
+  width: 135px;
+  left: 590px;
+  top: 290px;
+}
+
+.ticket {
+  width: 145px;
+  left: 700px;
+  top: 430px;
+}
+
+
+.item:hover {
+  transform: scale(1.2);
+  z-index: 10;
+}
