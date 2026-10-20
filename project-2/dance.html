@@ -6,36 +6,76 @@
   <title>Dance | The Suitcase I Carry</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="memory-page">
-  
   <div class="memory-card">
-    <a href="index.html" class="back-link">
-      ← Back to My Suitcase
-    </a>
     
-    <h1>Dance Is Part of Me</h1>
+    <h1>The Shoes I Almost Left Behind</h1>
     
     <p class="memory-subtitle">
-      A journey that began when I was four
+      A story about growing up and finding my passion.
     </p>
     
     <img src="assets/dance.png"
-       alt="My dance shoes"
-        class="memory-photo"
-    >
+         alt="My dance shoes"
+         class="memory-photo">
     
     <p class="memory-story">
-      I started dancing when I was four years old.
-      Over the years, dance has become more than
-      just a hobby. It has taught me patience,
-      confidence, and how to express myself
-      without words.
+      You started dancing when you were four.
+      At first, dancing was something you loved.
+      <br><br>
+      But as you grew older, endless practices,
+      competitions, and expectations slowly
+      made dancing feel like a responsibility.
+      <br><br>
+      One day, while packing your suitcase,
+      you find your old dance shoes.
+      They remind you of both the happiness
+      and the pressure.
+      <br><br>
+      What will you do with them?
     </p>
     
-    <p class="memory-ending">
-      Wherever I go, dance goes with me.
-    </p>
+    <div class="choice-buttons" id="choices">
+      <button onclick="makeDanceChoice('keep')">
+        Keep Dancing
+      </button>
+      <button onclick="makeDanceChoice('leave')">
+        Leave It Behind
+      </button>
+    </div>
+    
+    <p id="dance-ending" class="memory-ending"></p>
+    
+    <a href="index.html"
+       id="dance-return"
+       class="back-link"
+       style="display:none;">
+       Return to My Suitcase →
+    </a>
+    
   </div>
+  <script>
+    function makeDanceChoice(choice) {
+      localStorage.setItem("danceChoice", choice);
+      const ending =
+        document.getElementById("dance-ending");
+      const returnLink =
+        document.getElementById("dance-return");
+      if (choice === "keep") {
+        ending.textContent =
+          "You choose to keep dancing. " +
+          "The shoes remind you why you started. " +
+          "You decide to carry them into your next chapter.";
+      }
+      if (choice === "leave") {
+        ending.textContent =
+          "You leave the shoes behind. " +
+          "The memories begin to fade, " +
+          "but they will always be part of who you are.";
+      }
+      document.getElementById("choices").style.display = "none";
+      returnLink.style.display = "block";
+    }
+  </script>
 </body>
 </html>

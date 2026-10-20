@@ -35,7 +35,7 @@
          </a>
          
          <!-- Dance -->
-         <a href="dance.html" class="object dance">
+         <a href="dance.html" class="object dance" id="dance-object">
          <img src="assets/dance.png" alt="Dance">
          </a>
          
@@ -108,5 +108,12 @@
         <p>Qingdao → Los Angeles</p>
      </footer>
         
+      <script>
+       const danceChoice = localStorage.getItem("danceChoice");
+       const danceObject = document.getElementById("dance-object");
+       if (danceChoice === "leave") {
+       danceObject.classList.add("dance-faded");
+       }
+      </script>
     </body>
 </html>
