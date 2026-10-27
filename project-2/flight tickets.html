@@ -10,35 +10,88 @@
 <body class="memory-page">
   
   <div class="memory-card">
-    <a href="index.html" class="back-link">
+    <a href="suitcase.html" class="back-link">
       ← Back to My Suitcase
     </a>
     
     <h1>A Journey Far From Home</h1>
     
     <p class="memory-subtitle">
-      Qingdao → Los Angeles
+      A story about leaving home and growing up.
     </p>
     
     <img src="assets/flight tickets.png"
-      alt="My flight tickets"
-     class="memory-photo"
-    >
+      alt="Flight tickets"
+      class="memory-photo">
     
     <p class="memory-story">
-      Leaving home to study abroad was one of
-      the biggest changes in my life.
-      I was excited about a new beginning,
-      but also nervous about everything
-      I was leaving behind.
-      This ticket represents not only a journey
-      to another country, but also a new chapter
-      of my life.
+      You have always wondered what life
+      would be like somewhere far away.
+      <br><br>
+      One day, you receive an opportunity
+      to study abroad.
+      <br><br>
+      Leaving means discovering a new world,
+      meeting new people, and becoming
+      more independent.
+      <br><br>
+      But it also means saying goodbye
+      to your family, your hometown,
+      and the familiar taste of the fruits
+      you grew up eating.
+      <br><br>
+      You look at the ticket in your hand.
+      <br><br>
+      Will you take the flight,
+      or choose to stay?
     </p>
     
-    <p class="memory-ending">
-      Sometimes growing up means learning to say goodbye.
-    </p>
+    <div class="choice-buttons" id="flight-choices">
+      <button onclick="makeFlightChoice('abroad')">
+        Study Abroad
+      </button>
+      
+      <button onclick="makeFlightChoice('stay')">
+        Stay Home
+      </button>
+    </div>
+    
+    <p id="flight-ending" class="memory-ending"></p>
+    
+    <a href="suitcase.html"
+       id="flight-return"
+       class="back-link"
+       style="display:none;">
+      Return to My Suitcase →
+    </a>
   </div>
+  
+  <script>
+    function makeFlightChoice(choice) {
+      localStorage.setItem("flightChoice", choice);
+      const ending = document.getElementById("flight-ending");
+      const returnLink = document.getElementById("flight-return");
+      
+      if (choice === "abroad") {
+        ending.textContent =
+          "You decide to take the flight. " +
+          "A new chapter begins far from home. " +
+          "The ticket becomes part of your journey, " +
+          "while the familiar taste of home " +
+          "slowly turns into a distant memory.";
+      }
+      
+      if (choice === "stay") {
+        ending.textContent =
+          "You decide to stay. " +
+          "The plane ticket becomes a journey " +
+          "you never took. " +
+          "But the familiar streets, family, " +
+          "and taste of home remain close to you.";
+      }
+      document.getElementById("flight-choices").style.display = "none";
+      returnLink.style.display = "block";
+    }
+  </script>
 </body>
 </html>

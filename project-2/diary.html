@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diary | The Suitcase I Carry</title>
   <link rel="stylesheet" href="style.css">
+      <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5.sound@0.4.1/dist/p5.sound.min.js"></script>
 </head>
 
-<body class="memory-page">
+<body class="memory-page" style="background-image: none;">
   
-  <div class="memory-card">
-    <a href="index.html" class="back-link">
+ <div class="memory-card" style="background: transparent; border: none; box-shadow: none;">
+    <a href="suitcase.html" class="back-link">
       ← Back to My Suitcase
     </a>
     
@@ -32,10 +34,84 @@
       Sometimes I look back and realize how much
       I have changed without even noticing.
     </p>
+   
+  <div class="choice-buttons" id="diary-choices">
+   <button onclick="makeDiaryChoice('keep')">
+     Keep the Diary
+   </button>
+    
+   <button onclick="makeDiaryChoice('leave')">
+     Leave It Behind
+   </button>
+  </div>
+   
+   <p id="diary-ending" class="memory-ending"></p>
+   
+  <a href="suitcase.html"
+   id="diary-return"
+   class="back-link"
+   style="display:none;">
+   Return to My Suitcase →
+  </a>
     
     <p class="memory-ending">
       Every page holds a different version of me.
     </p>
   </div>
+    <script src="diary-sketch.js"></script>
+    <audio id="diaryMusic" loop>
+     <source src="assets/diary-music.mp3" type="audio/mpeg">
+    </audio>
+  
+  <button id="diaryMusicButton" onclick="toggleDiaryMusic()"
+  style="position:fixed; bottom:25px; right:25px;
+      z-index:100; padding:12px 18px;
+      background:#f3e4c9; color:#4b3020;
+      border:1px solid #c9a982;
+      border-radius:20px; cursor:pointer;">
+  ♪ Play Music
+  </button>
+  
+  <script>
+  function toggleDiaryMusic() {
+    const music = document.getElementById("diaryMusic");
+    const button = document.getElementById("diaryMusicButton");
+    if (music.paused) {
+      music.volume = 0.3;
+      music.play().then(() => {
+      button.textContent = "♪ Pause Music";
+      }).catch(error => {
+        console.error("Diary audio failed:", error);
+      });
+    } else {
+      music.pause();
+      button.textContent = "♪ Play Music";
+    }
+  }
+ </script>
+  
+ <script>
+  function makeDiaryChoice(choice) {
+    localStorage.setItem("diaryChoice", choice);
+    const ending = document.getElementById("diary-ending");
+    const returnLink = document.getElementById("diary-return");
+    
+    if (choice === "keep") {
+      ending.textContent =
+        "You decide to keep your diary. " +
+        "Even the smallest moments deserve to be remembered. " +
+        "You will keep writing your story.";
+    }
+    
+    if (choice === "leave") {
+      ending.textContent =
+        "You decide to leave your diary behind. " +
+        "Some memories begin to fade, " +
+        "but they have already shaped who you are.";
+    }
+    document.getElementById("diary-choices").style.display = "none";
+    returnLink.style.display = "block";
+  }
+ </script>
 </body>
 </html>

@@ -18,20 +18,20 @@ body {
   text-align: center;
   
   min-height: 100vh;
-}
-
-/* Title */
+ }
+ 
+ /* Title */
  header {
    padding-top: 25px;
  }
  
  h1 {
+   font-family: 'Caveat', cursive;
    font-size: clamp(42px, 5vw, 76px);
    font-weight: 500;
    margin-bottom: 5px;
  }
-
-/* Handwritten introduction */
+ 
  .intro {
    font-family: 'Caveat', cursive;
    font-size: 27px;
@@ -40,13 +40,13 @@ body {
  }
  
  .instruction {
+   font-family: 'Caveat', cursive;
    font-size: 20px;
    letter-spacing: 1px;
  }
-
-/* Suitcase area */
  
- /* Main scene */
+ /* Suitcase area */
+ 
  .scene {
    position: relative;
    width: 100%;
@@ -54,8 +54,7 @@ body {
    min-height: 0;
    margin: 20px auto 50px;
  }
-
- /* Suitcase */
+ 
  .suitcase {
    display: block;
    width: 65%;
@@ -64,9 +63,9 @@ body {
    margin: 0 auto;
    filter: drop-shadow(0 18px 20px rgba(70,40,20,0.3));
  }
-
-/* Footer */
+ 
  footer {
+   font-family: 'Caveat', cursive;
    padding: 15px 0 30px;
    font-size: 22px;
  }
@@ -74,17 +73,17 @@ body {
  footer p {
    margin-bottom: 8px;
  }
-
-/* Memory objects */
+ 
  .object {
-   position: absolute;
-   display: block;
-   width: 13%;
-   z-index: 2;
-   cursor: pointer;
-   
-   transition: transform 0.3s ease,
-   filter 0.3s ease;
+  position: absolute;
+  display: block;
+  width: 13%;
+  z-index: 5;
+  cursor: pointer;
+  transform: rotate(var(--angle, 0deg));
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
  }
  
  .object img {
@@ -92,29 +91,14 @@ body {
    width: 100%;
    height: auto;
  }
-
-/* Hover effect */
  
- /* Memory objects */
- .object {
-   position: absolute;
-   display: block;
-   z-index: 2;
-   cursor: pointer;
-   transform: rotate(var(--angle, 0deg));
-   
-   transition: transform 0.3s ease,
-   filter 0.3s ease;
- }
- 
- /* Hover */
  .object:hover {
    transform: rotate(0deg) scale(1.15) translateY(-8px);
    z-index: 20;
    filter: brightness(1.05);
  }
  
- /* Cat */
+ 
  .cat {
    top: 8%;
    left: 15%;
@@ -123,7 +107,6 @@ body {
    z-index: 3;
  }
  
- /* Dance */
  .dance {
    top: 13%;
    left: 43%;
@@ -132,7 +115,6 @@ body {
    z-index: 4;
  }
  
- /* Doll */
  .doll {
    top: 30%;
    left: 66%;
@@ -141,7 +123,6 @@ body {
    z-index: 3;
  }
  
- /* Sea */
  .sea {
    top: 44%;
    left: 23%;
@@ -150,7 +131,6 @@ body {
    z-index: 5;
  }
  
- /* Diary */
  .diary {
    top: 48%;
    left: 43%;
@@ -159,7 +139,6 @@ body {
    z-index: 6;
  }
  
- /* Flight tickets */
  .tickets {
    top: 52%;
    left: 62%;
@@ -168,7 +147,6 @@ body {
    z-index: 5;
  }
  
- /* Fruit */
  .fruit {
    top: 51%;
    left: 19%;
@@ -193,6 +171,7 @@ body {
 
 /* Vintage notes */
  .note {
+   font-family: 'Caveat', cursive;
    position: absolute;
    width: 16%;
    padding: 12px 14px;
@@ -270,13 +249,26 @@ body {
    transform: rotate(5deg);
  }
 
+ .note-7 {
+   top: 105%;
+   left: 3%;
+   transform: rotate(-4deg);
+ }
+ 
+ .note-8 {
+   top: 105%;
+   right: 3%;
+   transform: rotate(4deg);
+ }
+
+
 /* Keep suitcase and objects together */
 .suitcase-group {
   position: relative;
   width: 65%;
   max-width: 850px;
   margin: 0 auto;
-  z-index: 10;
+  z-index: auto;
 }
 
 /* Tape on vintage notes */
@@ -296,14 +288,17 @@ body {
   z-index: 25;
 }
 
- .suitcase-group .suitcase {
-   pointer-events: none;
- }
- 
- .suitcase-group .object {
-   pointer-events: auto;
-   cursor: pointer;
- }
+
+.suitcase {
+  position: relative;
+  z-index: 0;
+}
+.object {
+  z-index: 3;
+}
+.note {
+  z-index: 4;
+}
 
 /* Individual memory pages */
  .memory-page {
@@ -390,6 +385,43 @@ body {
    transition: filter 0.6s ease;
  }
 
+
+/* Diary memory after leaving it behind */
+.diary-faded img {
+  filter:
+    grayscale(85%)
+    sepia(35%)
+    opacity(0.35);
+  transition: filter 0.6s ease;
+}
+
+/* Cat memory after giving up */
+.cat-faded img {
+  filter:
+    grayscale(85%)
+    sepia(35%)
+    opacity(0.35);
+  transition: filter 0.6s ease;
+}
+
+/* Flight ticket after choosing to stay */
+.flight-faded img {
+  filter:
+    grayscale(85%)
+    sepia(35%)
+    opacity(0.35);
+  transition: filter 0.6s ease;
+}
+
+/* Fruit after choosing to study abroad */
+.fruit-faded img {
+  filter:
+    grayscale(85%)
+    sepia(35%)
+    opacity(0.35);
+  transition: filter 0.6s ease;
+}
+
 /* Story choices */
  .choice-buttons {
    display: flex;
@@ -422,3 +454,162 @@ body {
  #dance-return {
    margin-top: 25px;
  }
+
+/* ===== HOMEPAGE MEMORY LINES ===== */
+
+/* Main scene */
+.scene {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+/* Both SVG line layers */
+.memory-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* Line behind suitcase */
+.memory-lines-back {
+  z-index: 0;
+}
+
+/* Lines in front of suitcase */
+.memory-lines-front {
+  z-index: 2;
+}
+
+/* Keep suitcase group from trapping objects */
+.suitcase-group {
+  position: relative;
+  z-index: auto;
+}
+
+/* Suitcase itself */
+.suitcase {
+  position: relative;
+  z-index: 1;
+}
+
+/* All clickable objects above the lines */
+.scene .object {
+  position: absolute;
+  z-index: 5;
+}
+
+/* All notes above the lines */
+.scene .note {
+  position: absolute;
+  z-index: 6;
+}
+
+/* Curved vintage dashed lines */
+.memory-lines path {
+  fill: none;
+  stroke: #9b7859;
+  stroke-width: 1.7;
+  stroke-dasharray: 5 7;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+
+/* Vintage paper background for homepage title */
+.title-paper {
+  width: fit-content;
+  max-width: 85%;
+  margin: 25px auto 35px;
+  padding: 18px 55px;
+  background: rgba(239, 221, 185, 0.88);
+  border: 1px solid rgba(150, 110, 75, 0.25);
+  border-radius: 4px;
+  box-shadow: 0 5px 18px rgba(70, 45, 25, 0.12);
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.title-paper h1 {
+  margin-top: 0;
+  color: #4b3020;
+}
+
+.title-paper p {
+  color: #604632;
+}
+
+
+/* Page background */
+body.memory-page.dance-page {
+  background: #f5eee4;
+  background-image: none;
+  color: #3e2b1b;
+}
+
+/* Story card */
+.dance-page .memory-card {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+/* Text */
+.dance-page h1,
+.dance-page .memory-subtitle,
+.dance-page .memory-story {
+  color: #3e2b1b;
+  text-shadow: none;
+}
+
+/* GIF and shoes container */
+.dance-page .dance-visual {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  height: 360px;
+  margin: 20px auto 35px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* Animated dancing silhouette */
+.dance-page .dance-animation {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Dance shoes */
+.dance-page .dance-visual .memory-photo {
+  position: relative;
+  z-index: 1;
+  width: auto;
+  max-width: 65%;
+  max-height: 260px;
+  margin: 45px auto 0;
+
+  filter: drop-shadow(
+    0 8px 12px rgba(40, 25, 15, 0.3)
+  );
+}
+
+/* Ending and return link */
+.dance-page .memory-ending,
+.dance-page .back-link {
+  color: #906c4a;
+}

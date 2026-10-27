@@ -1,119 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>The Suitcase I Carry</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open My Suitcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
     
-    <body>
-     <header>
-     <h1>The Suitcase I Carry</h1>
-     
-        <p class="intro">
-         I packed my clothes in a suitcase.<br>
-         I didn't realize I was packing my past, too.
-        </p>
-        
-        <p class="instruction">
-         Move your cursor over the objects to unpack my memories.
-        </p>
-     </header>
-        
-     <main class="scene">
-     <div class="suitcase-group">
-         
-         <!-- Suitcase -->
-         <img class="suitcase"
-         src="assets/suitcase.png"
-         alt="My suitcase">
-         
-         <!-- Cat -->
-         <a href="cat.html" class="object cat">
-         <img src="assets/cat.png" alt="My cat">
-         </a>
-         
-         <!-- Dance -->
-         <a href="dance.html" class="object dance" id="dance-object">
-         <img src="assets/dance.png" alt="Dance">
-         </a>
-         
-          <!-- Diary -->
-         <a href="diary.html" class="object diary">
-         <img src="assets/diary.png" alt="Diary">
-         </a>
-         
-         <!-- Doll -->
-         <a href="doll.html" class="object doll">
-         <img src="assets/doll.png" alt="My doll">
-         </a>
-         
-         <!-- Flight tickets -->
-         <a href="flight tickets.html" class="object tickets">
-         <img src="assets/flight tickets.png" alt="Flight tickets">
-         </a>
-         
-         <!-- Fruit -->
-         <a href="fruit.html" class="object fruit">
-         <img src="assets/fruit.png" alt="Fruit">
-         </a>
-         
-          <!-- Sea -->
-         <a href="sea.html" class="object sea">
-         <img src="assets/sea.png" alt="The sea">
-         </a>
-         
-     </div>
-     
-     <!-- Notes -->
-     <div class="note note-childhood">
-         <h2>CHILDHOOD</h2>
-         <p>Some of my earliest memories are small fragments of home.</p>
-     </div>
-        
-     <div class="note note-dance">
-          <h2>DANCE</h2>
-         <p>I started dancing when I was four.
-         Dance has always been a part of me.</p>
-     </div>
-        
-     <div class="note note-home">
-         <h2>HOME</h2>
-         <p>I grew up close to the sea.
-         The sound of the ocean still feels like home.</p>
-     </div>
-        
-     <div class="note note-leaving">
-         <h2>LEAVING</h2>
-         <p>One ticket changed the distance
-         between me and home.</p>
-     </div>
-        
-     <div class="note note-growing">
-         <h2>GROWING UP</h2>
-         <p>Different schools, different places,
-         and different versions of myself.</p>
-     </div>
-        
-     <div class="note note-memory">
-         <h2>MEMORY</h2>
-         <p>There are people and moments
-         I want to keep with me.</p>
-     </div>
-     </main>
-        
-     <footer>
-        <p>A self-portrait made from the things I chose to carry.</p>
-        <p>Qingdao → Los Angeles</p>
-     </footer>
-        
-      <script>
-       const danceChoice = localStorage.getItem("danceChoice");
-       const danceObject = document.getElementById("dance-object");
-       if (danceChoice === "leave") {
-       danceObject.classList.add("dance-faded");
-       }
-      </script>
-    </body>
+    body {
+      margin: 0;
+      background: #38261c;
+      overflow: hidden;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    
+    .cover {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    
+    .cover-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 2s ease,
+       opacity 2s ease;
+    }
+    
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 18, 10, 0.30);
+      pointer-events: none;
+    }
+    
+    .cover-text {
+      position: absolute;
+      top: 12%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      text-align: center;
+      z-index: 2;
+      color: #fff1d8;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+      transition: opacity 0.8s;
+    }
+    
+    h1 {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(42px, 6vw, 85px);
+      margin: 0;
+    }
+    
+    p {
+      font-size: 24px;
+      font-style: italic;
+    }
+    
+    .instruction {
+      position: absolute;
+      bottom: 9%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: #fff1d8;
+      font-family: 'Caveat', cursive;
+      font-size: 30px;
+      text-align: center;
+      animation: glow 2s infinite alternate;
+    }
+    
+    @keyframes glow {
+      from { opacity: 0.5; }
+      to { opacity: 1; }
+    }
+    
+    .cover.opening .cover-image {
+      transform: scale(1.3);
+      opacity: 0;
+    }
+    
+    .cover.opening .cover-text,
+    .cover.opening .instruction {
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cover" id="cover">
+    <img
+      src="assets/cover.png"
+      alt="Vintage suitcase filled with memories"
+      class="cover-image"
+    >
+    
+    <div class="cover-text">
+      <h1>The Suitcase I Carry</h1>
+      <p>Every object holds a memory.</p>
+    </div>
+    
+    <div class="instruction">
+      Click to unpack my memories
+    </div>
+  </div>
+  <script>
+    const cover = document.getElementById("cover");
+    cover.addEventListener("click", function () {
+    cover.classList.add("opening");
+    setTimeout(function () {
+    window.location.href = "suitcase.html";
+    }, 1900);
+  }, { once: true });
+  </script>
+</body>
 </html>

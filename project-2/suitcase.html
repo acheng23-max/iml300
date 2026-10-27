@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Suitcase I Carry</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+<body>
+  <header>
+    <div class="title-paper">
+     <h1>The Suitcase I Carry</h1>
+     <p>
+       I packed my clothes in a suitcase.<br>
+       I didn't realize I was packing my past, too.
+     </p>
+      
+      <p>
+       Move your cursor over the objects to unpack my memories.
+      </p>
+    </div>
+  </header>
+  
+ <main class="scene">
+  <svg class="memory-lines memory-lines-back" aria-hidden="true"></svg>
+  <svg class="memory-lines memory-lines-front" aria-hidden="true"></svg>
+  <div class="suitcase-group">
+    
+    <img class="suitcase"
+    src="assets/suitcase.png"
+    alt="My suitcase">
+    
+    <a href="cat.html" class="object cat">
+    <img src="assets/cat.png" alt="My cat">
+    </a>
+    
+    <a href="dance.html" class="object dance" id="dance-object">
+    <img src="assets/dance.png" alt="Dance">
+    </a>
+    
+    <a href="diary.html" class="object diary">
+    <img src="assets/diary.png" alt="Diary">
+    </a>
+    
+    <a href="doll.html" class="object doll">
+    <img src="assets/doll.png" alt="My doll">
+    </a>
+    
+    <a href="flight tickets.html" class="object tickets">
+   <img src="assets/flight tickets.png" alt="Flight tickets">
+    </a>
+    
+    <a href="fruit.html" class="object fruit">
+    <img src="assets/fruit.png" alt="Fruit">
+    </a>
+    
+    <a href="sea.html" class="object sea">
+    <img src="assets/sea.png" alt="The sea">
+    </a>
+   </div>
+    
+  <!-- Notes -->
+ <div class="note note-childhood">
+   <h3>MY CAT</h3>
+   <p>A little friend who taught me love, patience, and responsibility.</p>
+ </div>
+  
+ <div class="note note-home">
+   <h3>THE SEA</h3>
+   <p>The sound of waves always takes me back to my hometown.</p>
+ </div>
+ 
+ <div class="note note-growing">
+   <h3>MY DIARY</h3>
+   <p>Pages filled with thoughts, secrets, and the person I used to be.</p>
+ </div>
+ 
+ <div class="note note-dance">
+   <h3>DANCE SHOES</h3>
+   <p>Thirteen years of practice, pressure, and a passion I almost lost.</p>
+ </div>
+  
+  <div class="note note-leaving">
+   <h3>FLIGHT TICKETS</h3>
+   <p>A one-way journey that took me far from everything familiar.</p>
+ </div>
+ 
+ <div class="note note-memory">
+   <h3>MY DOLL</h3>
+   <p>A small piece of childhood I never wanted to leave behind.</p>
+ </div>
+ 
+  <div class="note note-7">
+   <h3>FRUIT FROM HOME</h3>
+   <p>A familiar taste that reminds me of the little comforts of home.</p>
+ </div>
+  
+ <!-- Suitcase -->
+ <div class="note note-8">
+   <h3>MY SUITCASE</h3>
+   <p>More than clothes. It carries the memories that made me who I am.</p>
+ </div>
+  
+  </main>
+   
+    <footer>
+      <p>A self-portrait made from the things I chose to carry.</p>
+      <p>Qingdao → Los Angeles</p>
+     </footer>
+      
+      <script>
+       const danceChoice = localStorage.getItem("danceChoice");
+       const danceObject = document.getElementById("dance-object");
+       if (danceChoice === "leave") {
+       danceObject.classList.add("dance-faded");
+       }
+      </script>
+      
+      <script>
+       const diaryChoice = localStorage.getItem("diaryChoice");
+       const diaryObject = document.querySelector(".object.diary");
+       if (diaryObject && diaryChoice === "leave") {
+        diaryObject.classList.add("diary-faded");
+       }
+      </script>
+      
+      <script>
+       const catChoice = localStorage.getItem("catChoice");
+       const catObject = document.querySelector(".object.cat");
+       if (catObject && catChoice === "giveup") {
+       catObject.classList.add("cat-faded");
+       }
+      </script>
+     
+      <script>
+        const flightChoice = localStorage.getItem("flightChoice");
+       const ticketObject = document.querySelector(".object.tickets");
+       const fruitObject = document.querySelector(".object.fruit");
+       if (flightChoice === "stay") {
+       if (ticketObject) {
+       ticketObject.classList.add("flight-faded");
+        }
+       if (fruitObject) {
+       fruitObject.classList.add("fruit-faded");
+       }
+       }
+      </script>
+  
+ <script>
+  const connections = [
+    [".note-childhood", ".cat"],
+    [".note-dance", ".dance"],
+    [".note-home", ".sea"],
+    [".note-leaving", ".tickets"],
+    [".note-growing", ".diary"],
+    [".note-memory", ".doll"],
+    [".note-7", ".fruit"],
+    [".note-8", ".suitcase"]
+  ];
+   
+  function drawLines() {
+    const scene = document.querySelector(".scene");
+    const back = document.querySelector(".memory-lines-back");
+    const front = document.querySelector(".memory-lines-front");
+    
+    if (!scene || !back || !front) return;
+    back.replaceChildren();
+    front.replaceChildren();
+    
+    const sceneRect = scene.getBoundingClientRect();
+    const width = scene.clientWidth;
+    const noteBottoms = [...scene.querySelectorAll(".note")]
+      .map(note =>
+        note.getBoundingClientRect().bottom - sceneRect.top
+      );
+    const height = Math.max(
+      scene.clientHeight,
+      ...noteBottoms
+    ) + 20;
+    [back, front].forEach(svg => {
+      svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      svg.setAttribute("preserveAspectRatio", "none");
+      svg.style.height = `${height}px`;
+    });
+    connections.forEach(([from, to], index) => {
+      const note = document.querySelector(from);
+      const object = document.querySelector(to);
+      if (!note || !object) return;
+      
+      const a = note.getBoundingClientRect();
+      const b = object.getBoundingClientRect();
+      const noteCenterX = a.left + a.width / 2;
+      const objectCenterX = b.left + b.width / 2;
+      
+      const x1 = (
+        objectCenterX > noteCenterX ? a.right : a.left
+      ) - sceneRect.left;
+      const y1 = a.top + a.height / 2 - sceneRect.top;
+      const x2 = b.left + b.width / 2 - sceneRect.left;
+      const y2 = b.top + b.height / 2 - sceneRect.top;
+      
+      const dx = x2 - x1;
+      const dy = y2 - y1;
+      
+      const controlX = x1 + dx * 0.5;
+      const controlY = y1 + dy * 0.5
+        + (index % 2 === 0 ? -25 : 25);
+      const path = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "path"
+      );
+      path.setAttribute(
+        "d",
+        `M ${x1} ${y1}
+         Q ${controlX} ${controlY}
+         ${x2} ${y2}`
+      );
+      if (to === ".suitcase") {
+        back.appendChild(path);
+      } else {
+        front.appendChild(path);
+      }
+    });
+  }
+ 
+  window.addEventListener("load", drawLines);
+ 
+  window.addEventListener("resize", drawLines);
+ 
+  document.querySelectorAll(".scene img").forEach(img => {
+    img.addEventListener("load", drawLines);
+  });
+ </script>
+</body>
+</html>

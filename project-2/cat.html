@@ -3,41 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Cat | The Suitcase I Carry</title>
+  <title>The Cat | The Suitcase I Carry</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5.sound@0.4.1/dist/p5.sound.min.js"></script>
 </head>
 
-<body class="memory-page">
+<body class="memory-page" style="background: white;">
+ <div class="memory-card"
+   style="position: relative;
+    z-index: 2;
+    background: transparent;
+    border: none;
+    box-shadow: none;">
   
-  <div class="memory-card">
-    <a href="index.html" class="back-link">
-      ← Back to My Suitcase
-    </a>
-    
-    <h1>My Little Companion</h1>
-    
-    <p class="memory-subtitle">
-      A little piece of my childhood
-    </p>
-    
-    <img
-      src="assets/cat.png"
-      alt="My cat"
-      class="memory-photo"
-    >
-    
-    <p class="memory-story">
-      Some memories are not about big events,
-      but about the little moments we share
-      with those we love.
-      My cat reminds me of the warmth of home
-      and the small, peaceful moments
-      of my childhood.
-    </p>
-    
-    <p class="memory-ending">
-      Some memories never leave us.
-    </p>
+  <a href="suitcase.html" class="back-link">
+   ← Back to My Suitcase
+ </a>
+  
+ <h1>The Cat I Wanted to Keep</h1>
+  
+  <p class="memory-subtitle">
+    A story about love, responsibility,
+   and standing up for what you want.
+  </p>
+  
+  <img src="assets/cat.png"
+   alt="My cat"
+    class="memory-photo">
+  
+  <p class="memory-story">
+    You have always loved cats.
+    One day, you finally ask your mom
+    if you can have one.
+    But she says no.
+    She worries about the mess,
+    the cost, and who will take care of it.
+    You promise that you will be responsible,
+    but she still isn't convinced.
+    <br><br>
+    Will you keep trying to change her mind,
+    or let go of your wish?
+  </p>
+ 
+  <div class="choice-buttons" id="cat-choices">
+   <button onclick="makeCatChoice('keep')">
+     Keep Trying
+   </button>
+   <button onclick="makeCatChoice('giveup')">
+     Give Up
+   </button>
   </div>
+  
+  <p id="cat-ending" class="memory-ending"></p>
+  
+  <a href="suitcase.html"
+    id="cat-return"
+    class="back-link"
+    style="display:none;">
+    Return to My Suitcase →
+  </a>
+  </div>
+  
+  <script src="cat-sketch.js"></script>
+  
+  <script>
+    function makeCatChoice(choice) {
+    localStorage.setItem("catChoice", choice);
+    const ending = document.getElementById("cat-ending");
+    const returnLink = document.getElementById("cat-return");
+    
+    if (choice === "keep") {
+      ending.textContent =
+      "You keep trying. " +
+      "You learn how to care for a cat " +
+      "and show your mom that you are ready. " +
+      "One day, she finally says yes. " +
+      "Your wish becomes a new memory.";
+      }
+    if (choice === "giveup") {
+      ending.textContent =
+      "You decide to let go of your wish. " +
+      "You never get the cat you dreamed of, " +
+      "but the love you felt for it stays with you. " +
+       "Some dreams remain only as memories.";
+      }
+    document.getElementById("cat-choices").style.display = "none";
+    returnLink.style.display = "block";
+    }
+  </script>
 </body>
 </html>
