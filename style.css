@@ -1,0 +1,236 @@
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #ef93b8;
+  color: #722c50;
+  font-family: "Chalkduster", "Comic Sans MS", cursive;
+  line-height: 1.8;
+}
+h1, h2, h3, a, button {
+  font-family: "Chalkduster", "Comic Sans MS", cursive;
+  font-weight: normal;
+}
+a {
+  color: #a45d80;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+.site-header {
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 22px;
+}
+nav {
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  font-size: 12px;
+}
+
+/* Homepage */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero h1 {
+  font-size: 45px;
+  margin: 15px 0;
+}
+.intro {
+  max-width: 700px;
+  margin: 20px auto 30px;
+  font-size: 13px;
+}
+.small-title,
+.label {
+  color: #99647f;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+.main-button,
+.project-button {
+  display: inline-block;
+  background: #e9bfd1;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* Sections */
+.section {
+  max-width: 1150px;
+  margin: auto;
+  padding: 35px 25px;
+}
+.section > h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.section-intro {
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+/* Projects */
+.project-card {
+  display: flex;
+  background: #fff9fc;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.project-text {
+  flex: 2;
+  padding: 25px;
+}
+.project-text h2 {
+  font-size: 23px;
+}
+.project-text p {
+  font-size: 12px;
+}
+.project-image {
+  flex: 1;
+  background: #efd2df;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.project-image h3 {
+  font-size: 22px;
+}
+.project-image p {
+  font-size: 11px;
+}
+.sound-symbol,
+.suitcase-symbol,
+.cat-symbol {
+  font-size: 50px;
+}
+
+/* Exercises */
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.exercise-card {
+  background: #fff9fc;
+  padding: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 0;
+}
+.exercise-card h2 {
+  font-size: 17px;
+  margin: 0 0 12px;
+}
+
+/* p5.js Preview */
+.exercise-card iframe {
+  display: block;
+  width: 250%;
+  height: 720px;
+  zoom: 0.4;
+  border: none;
+  background: white;
+  margin-bottom: 15px;
+}
+.exercise-card a {
+  display: block;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Vibe Coding */
+.vibe-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+.vibe-entry {
+  display: block;
+  background: #fff9fc;
+  padding: 12px;
+  border-radius: 8px;
+  min-width: 0;
+}
+.vibe-preview {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.vibe-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.vibe-info {
+  text-align: center;
+}
+.vibe-info h2 {
+  font-size: 15px;
+  margin: 8px 0;
+}
+.vibe-number,
+.vibe-open {
+  font-size: 10px;
+}
+
+/* Footer */
+footer {
+  max-width: 1150px;
+  margin: 40px auto 0;
+  padding: 20px;
+  text-align: center;
+  font-size: 11px;
+}
+footer a {
+  margin-left: 15px;
+}
+
+
+@media (max-width: 800px) {
+  .exercise-grid {
+    grid-template-columns: 1fr;
+  }
+  .vibe-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .project-card {
+    flex-direction: column;
+  }
+  .site-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero h1 {
+    font-size: 30px;
+  }
+  .vibe-gallery {
+    grid-template-columns: 1fr;
+  }
+}

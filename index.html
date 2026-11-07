@@ -1,50 +1,394 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Q's Homepage</title>
-    <!--Update with your name-->
-  </head>
+<html lang="en">
 
-  <body>
-    <div>
-      <h1>My name</h1>
-      <!--Update with your name-->
-      <p>
-        This is my website for <i>IML300 class</i>. Write a little bit about
-        yourself.
-      </p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alice Cheng | IML300</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="logo" href="#home">Alice Cheng ♡</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#exercises">Exercises</a>
+      <a href="#vibe-coding">Vibe Coding</a>
+    </nav>
+  </header>
+  
+  <!-- HOMEPAGE -->
+  <section id="home" class="hero">
+    <p class="small-title">IML300 · FALL 2026</p>
+    <h1>My Creative Archive</h1>
+    <p class="intro">
+      Hi! I'm Alice, a Media Arts + Practice student
+      at the University of Southern California.
+      Welcome to my IML300 website!
+      This is a collection of my interactive stories,
+      creative coding experiments, and digital projects.
+      I am interested in exploring how images,
+      sounds, memories, and interactions can
+      express emotions and tell personal stories.
+    </p>
+    
+    <a class="main-button" href="#projects">
+      Explore My Projects ♡
+    </a>
+    
+  </section>
+  
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h1>Projects</h1>
+    <p class="section-intro">
+      A collection of my creative coding
+      and interactive storytelling projects.
+    </p>
+    
+    <!-- PROJECT 1 -->
+    <div class="project-card">
+      <div class="project-text">
+        <p class="label">PROJECT 01 · P5.JS</p>
+        <h2>Sounds of Discomfort</h2>
+        <p>
+          My project explores how ordinary sounds can create
+          discomfort, tension, and anxiety. Inspired by chalk
+          scratching on a blackboard, Styrofoam rubbing,
+          mosquito buzzing, alarm clocks, and construction
+          drills, I built five interactive scenes using p5.js.
+          Visitors drag the mouse to scratch chalk or rub foam,
+          chase a mosquito that escapes their cursor,
+          press the space bar to toggle an alarm,
+          and hold the mouse to activate a drill.
+          Rather than making something pleasant,
+          I wanted people to notice how pitch, repetition,
+          and frequency influence our emotions and bodies.
+          The project turns everyday irritation into an
+          interactive audiovisual experience for visitors.
+        </p>
+        <a class="project-button"
+           href="https://editor.p5js.org/AliceCheng/sketches/zdgwx1Y58"
+           target="_blank"
+           rel="noopener noreferrer">
+          View Project 1 ↗
+        </a>
+      </div>
+      <div class="project-image sound-image">
+        <div class="sound-symbol">♫</div>
+        <h3>Sounds of<br>Discomfort</h3>
+        <p>Sound · Emotion · Interaction</p>
+      </div>
     </div>
-
-    <div>
-      <h1>Presentation</h1>
-      <a href="">Pecha Kucha: Lorem Ipsum</a>
+    
+    <!-- PROJECT 2 -->
+    <div class="project-card">
+      <div class="project-text">
+        <p class="label">PROJECT 02 · HYPERNARRATIVE</p>
+        <h2>My Suitcase</h2>
+        <p>
+          My Suitcase began with the experience of packing
+          before studying abroad. I realized that a suitcase
+          carries more than clothes: it also holds memories,
+          emotions, and pieces of identity. In this interactive
+          self-portrait, visitors explore objects such as dance
+          shoes, diaries, toys, and plane tickets, each connected
+          to a different stage of my life. They can make choices
+          while moving through the stories, reflecting how
+          growing up often means keeping something and leaving
+          something else behind. Through this project, I explore
+          how childhood, home, and personal experiences continue
+          to shape us, even when we begin a new life far away.
+        </p>
+        <a class="project-button"
+           href="IML300-Project2-AliceCheng/index.html"
+           target="_blank"
+           rel="noopener noreferrer">
+          Explore My Suitcase ↗
+        </a>
+      </div>
+      <div class="project-image suitcase-image">
+        <div class="suitcase-symbol">✧</div>
+        <h3>My Suitcase</h3>
+        <p>Memory · Identity · Growing Up</p>
+      </div>
     </div>
-
-    <div>
-      <h1>Projects</h1>
-      <h2>Project 1: Interactive Audio & Visual with p5.js</h2>
-      <a href="">Final: Lorem Ipsum</a>
-      <h2>Project 2: HyperNarrative</h2>
-      <a href="">Concept</a><br />
-      <a href="">Final: Lorem Ipsum</a>
-      <h2>Project 3: Networked Care</h2>
-      <a href="">Final: Lorem Ipsum</a>
+    
+    <!-- PROJECT 3 -->
+    <div class="project-card">
+      <div class="project-text">
+        <p class="label">PROJECT 03 · NETWORKED CARE</p>
+        <h2>NNN</h2>
+        <p>
+         NNN
+        </p>
+        <p class="coming-soon">
+          Coming Soon...
+        </p>
+      </div>
+      <div class="project-image cat-image">
+        <div class="cat-symbol">♡</div>
+        <h3>NN<br>NN</h3>
+        <p>Animal Welfare · Care · Social Justice</p>
+      </div>
     </div>
-
-    <div>
-      <h1>Exercises</h1>
-      <ul>
-        <li><a href="">p5.js sketch 1</a></li>
-        <li><a href="">p5.js sketch 2</a></li>
-        <li><a href="">p5.js sketch 3</a></li>
-        <li><a href="">p5.js sketch 4</a></li>
-      </ul>
+  </section>
+  
+  <!-- EXERCISES -->
+  <section id="exercises" class="section">
+    <h1>p5.js Exercises</h1>
+    <p class="section-intro">
+      A collection of my creative coding exercises.
+      Click on each sketch to interact with it.
+      Some sketches require mouse or keyboard input.
+    </p>
+    <div class="exercise-grid">
+      
+      <!-- EXERCISE 1 -->
+      <div class="exercise-card">
+        <h2>Exercise 1</h2>
+        <iframe
+          title="Exercise 1"
+          src="https://editor.p5js.org/Alice_Cheng/full/EZBW1WqwW"
+          loading="lazy"
+          allow="autoplay">
+        </iframe>
+        <a href="https://editor.p5js.org/Alice_Cheng/sketches/EZBW1WqwW"
+           target="_blank"
+           rel="noopener noreferrer">
+          View Editor ↗
+        </a>
+      </div>
+      
+      <!-- EXERCISE 2 -->
+      <div class="exercise-card">
+        <h2>Exercise 2</h2>
+        <iframe
+          title="Exercise 2"
+          src="https://editor.p5js.org/Alice_Cheng/full/B_AmIxCLB"
+          loading="lazy"
+          allow="autoplay">
+        </iframe>
+        <a href="https://editor.p5js.org/Alice_Cheng/sketches/B_AmIxCLB"
+           target="_blank"
+           rel="noopener noreferrer">
+          View Editor ↗
+        </a>
+      </div>
+      
+      <!-- EXERCISE 3 VERSION 1 -->
+      <div class="exercise-card">
+        <h2>Exercise 3 — Version 1</h2>
+        <iframe
+          title="Exercise 3 Version 1"
+          src="https://editor.p5js.org/AliceCheng/full/EgPcMcI1A"
+          loading="lazy"
+          allow="autoplay">
+        </iframe>
+        <a href="https://editor.p5js.org/AliceCheng/sketches/EgPcMcI1A"
+           target="_blank"
+           rel="noopener noreferrer">
+          View Editor ↗
+        </a>
+      </div>
+      
+      <!-- EXERCISE 3 VERSION 2 -->
+      <div class="exercise-card">
+        <h2>Exercise 3 — Version 2</h2>
+        <iframe
+          title="Exercise 3 Version 2"
+          src="https://editor.p5js.org/AliceCheng/full/Mtq10oyV2"
+          loading="lazy"
+          allow="autoplay">
+        </iframe>
+        <a href="https://editor.p5js.org/AliceCheng/sketches/Mtq10oyV2"
+           target="_blank"
+           rel="noopener noreferrer">
+          View Editor ↗
+        </a>
+      </div>
+      
+      <!-- EXERCISE 4 -->
+      <div class="exercise-card">
+        <h2>Exercise 4</h2>
+        <iframe
+          title="Exercise 4"
+          src="https://editor.p5js.org/AliceCheng/full/HOVGr4lal"
+          loading="lazy"
+          allow="autoplay">
+        </iframe>
+        <a href="https://editor.p5js.org/AliceCheng/sketches/HOVGr4lal"
+           target="_blank"
+           rel="noopener noreferrer">
+          View Editor ↗
+        </a>
+      </div>
+      
+      <!-- EXERCISE 5 -->
+      <div class="exercise-card">
+        <h2>Exercise 5</h2>
+        <iframe
+          title="Exercise 5"
+          src="https://editor.p5js.org/AliceCheng/full/pdnvpgOCI"
+          loading="lazy"
+          allow="autoplay">
+        </iframe>
+        <a href="https://editor.p5js.org/AliceCheng/sketches/pdnvpgOCI"
+           target="_blank"
+           rel="noopener noreferrer">
+          View Editor ↗
+        </a>
+      </div>
     </div>
-
-    <!--add a h1 element called 'Thoughts' Below-->
-    <h1>Thoughts</h1>
-
-    <footer>Fall, 2025.</footer>
-  </body>
+  </section>
+  
+  <!-- VIBE CODING EXPERIMENTS -->
+<section id="vibe-coding" class="section">
+  <h1>Vibe Coding Experiments</h1>
+  <p class="section-intro">
+    A collection of my creative experiments
+    in interactive websites, digital storytelling,
+    and web design.
+  </p>
+  <div class="vibe-gallery">
+    
+    <!-- EXPERIMENT 01 -->
+    <a class="vibe-entry"
+       href="https://dance-harmony-finder.lovable.app/"
+       target="_blank" rel="noopener noreferrer">
+      <div class="vibe-preview">
+        <img src="assets/vibe1.png"
+             alt="Dance Harmony Finder"
+             loading="lazy">
+      </div>
+      <div class="vibe-info">
+        <span class="vibe-number">EXPERIMENT 01</span>
+        <h2>Dance Harmony Finder</h2>
+        <span class="vibe-open">Explore Website ↗</span>
+      </div>
+    </a>
+    
+    <!-- EXPERIMENT 02 -->
+    <a class="vibe-entry"
+       href="https://control-shift-play.lovable.app/"
+       target="_blank" rel="noopener noreferrer">
+      <div class="vibe-preview">
+        <img src="assets/vibe2.png"
+             alt="Control Shift Play"
+             loading="lazy">
+      </div>
+      <div class="vibe-info">
+        <span class="vibe-number">EXPERIMENT 02</span>
+        <h2>Control Shift Play</h2>
+        <span class="vibe-open">Explore Website ↗</span>
+      </div>
+    </a>
+    
+    <!-- EXPERIMENT 03 - VERCEL -->
+    <a class="vibe-entry"
+       href="https://abode-five-ochre.vercel.app/"
+       target="_blank" rel="noopener noreferrer">
+      <div class="vibe-preview">
+        <img src="assets/vibe3.png"
+             alt="Abode Website"
+             loading="lazy">
+      </div>
+      <div class="vibe-info">
+        <span class="vibe-number">EXPERIMENT 03</span>
+        <h2>Abode</h2>
+        <span class="vibe-open">Explore Website ↗</span>
+      </div>
+    </a>
+    
+    <!-- EXPERIMENT 04 -->
+    <a class="vibe-entry"
+       href="https://unboxed-digital-self.lovable.app/"
+       target="_blank" rel="noopener noreferrer">
+      <div class="vibe-preview">
+        <img src="assets/vibe4.png"
+             alt="Unboxed Digital Self"
+             loading="lazy">
+      </div>
+      <div class="vibe-info">
+        <span class="vibe-number">EXPERIMENT 04</span>
+        <h2>Unboxed Digital Self</h2>
+        <span class="vibe-open">Explore Website ↗</span>
+      </div>
+    </a>
+    
+    <!-- EXPERIMENT 05 -->
+    <a class="vibe-entry"
+       href="https://first-impressions-unfold.lovable.app/"
+       target="_blank" rel="noopener noreferrer">
+      <div class="vibe-preview">
+        <img src="assets/vibe5.png"
+             alt="First Impressions Unfold"
+             loading="lazy">
+      </div>
+      <div class="vibe-info">
+        <span class="vibe-number">EXPERIMENT 05</span>
+        <h2>First Impressions Unfold</h2>
+        <span class="vibe-open">Explore Website ↗</span>
+      </div>
+    </a>
+    
+    <!-- EXPERIMENT 06 -->
+    <a class="vibe-entry"
+       href="https://themuseumofdeletedwords.lovable.app/"
+       target="_blank" rel="noopener noreferrer">
+      <div class="vibe-preview">
+        <img src="assets/vibe6.png"
+             alt="The Museum of Deleted Words"
+             loading="lazy">
+      </div>
+      <div class="vibe-info">
+        <span class="vibe-number">EXPERIMENT 06</span>
+        <h2>The Museum of Deleted Words</h2>
+        <span class="vibe-open">Explore Website ↗</span>
+      </div>
+    </a>
+    
+    <!-- EXPERIMENT 07 -->
+    <a class="vibe-entry"
+       href="https://pixel-perfect-page-recreator-83.lovable.app/"
+       target="_blank" rel="noopener noreferrer">
+      <div class="vibe-preview">
+        <img src="assets/vibe7.png"
+             alt="Pixel Perfect Page Recreator"
+             loading="lazy">
+      </div>
+      <div class="vibe-info">
+        <span class="vibe-number">EXPERIMENT 07</span>
+        <h2>Pixel Perfect Page Recreator</h2>
+        <span class="vibe-open">Explore Website ↗</span>
+      </div>
+    </a>
+    
+    <!-- EXPERIMENT 08 -->
+    <a class="vibe-entry"
+       href="https://pixel-perfect-replay-30591.lovable.app/"
+       target="_blank" rel="noopener noreferrer">
+      <div class="vibe-preview">
+        <img src="assets/vibe8.png"
+             alt="Pixel Perfect Replay"
+             loading="lazy">
+      </div>
+      <div class="vibe-info">
+        <span class="vibe-number">EXPERIMENT 08</span>
+        <h2>Pixel Perfect Replay</h2>
+        <span class="vibe-open">Explore Website ↗</span>
+      </div>
+    </a>
+  </div>
+  
+</section>
+  
+  <footer>
+    <p>Alice Cheng · IML300 · Fall 2026</p>
+    <a href="#home">Back to Top ↑</a>
+  </footer>
+</body>
 </html>
