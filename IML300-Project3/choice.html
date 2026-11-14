@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Small Choice</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="street.html">Street</a>
+    <a href="choice.html">Choice</a>
+    <a href="cage.html">Cage</a>
+    <a href="care.html">Care</a>
+  </nav>
+    
+  <main>
+      
+    <p class="chapter">CHAPTER 02</p>
+    <h1>A Small Choice</h1>
+      
+    <p>
+      The sun is going down.
+      I need to decide where to go.
+    </p>
+      
+    <h2>What should I do?</h2>
+      
+    <div class="choice-grid">
+        
+      <button class="choice"
+        data-message="I smell food nearby. Maybe someone has left something for me.">
+        <div class="choice-icon">🥣</div>
+        <h2>Follow the Food</h2>
+        <p>I am getting hungry.</p>
+      </button>
+        
+      <button class="choice"
+        data-message="I know a quiet place around the corner. Maybe I can rest there.">
+        <div class="choice-icon">📦</div>
+        <h2>Find a Quiet Place</h2>
+        <p>I just want somewhere safe.</p>
+      </button>
+    </div>
+      
+    <div class="story-box">
+      <p id="choice-text">
+        Click one of the choices above.
+      </p>
+    </div>
+      
+    <a class="button hidden" id="choice-next" href="cage.html">
+      Continue →
+    </a>
+  </main>
+  <footer>
+    Every small life has its own choices.
+  </footer>
+</body>
+</html>

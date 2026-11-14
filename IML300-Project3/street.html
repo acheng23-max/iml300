@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Street</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="street.html">Street</a>
+    <a href="choice.html">Choice</a>
+    <a href="cage.html">Cage</a>
+    <a href="care.html">Care</a>
+  </nav>
+    
+  <main>
+      
+    <p class="chapter">CHAPTER 01</p>
+    <h1>The Street</h1>
+      
+    <p>
+      This is my world.
+      Click on the objects to explore my life.
+    </p>
+      
+    <div class="street-scene">
+        
+      <!-- Cardboard box -->
+      <button class="object box-object"
+        data-message="This is where I sleep. It is small, but it is mine.">
+          
+        <img
+          src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F4E6.svg"
+          alt="Cardboard box">
+          
+        <span>My Shelter</span>
+      </button>
+        
+      <!-- Water bowl -->
+      <button class="object water-object"
+        data-message="Sometimes someone leaves water for me. I am always grateful.">
+          
+        <img
+          src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F963.svg"
+          alt="Water bowl">
+          
+        <span>Water Bowl</span>
+      </button>
+        
+      <!-- Bird -->
+      <button class="object bird-object"
+        data-message="I love watching the birds. They can go wherever they want.">
+          
+        <img
+          src="https://raw.githubusercontent.com/hfg-gmuend/openmoji/master/color/svg/1F426.svg"
+          alt="Bird">
+          
+        <span>Little Bird</span>
+      </button>
+    </div>
+      
+    <div class="story-box">
+      <p id="street-text">
+        I know every corner of this street.
+        Click on something to learn more about me.
+      </p>
+    </div>
+      
+    <a class="button" href="choice.html">
+      Keep Walking →
+    </a>
+  </main>
+    
+  <footer>
+    A Life Without a Choice
+  </footer>
+</body>
+</html>
